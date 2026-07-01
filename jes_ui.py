@@ -15,9 +15,9 @@ class UI:
         self.sliderList = []
         self.buttonList = []
         pygame.font.init()
-        self.bigFont = pygame.font.Font('OverPass.ttf', 60 * RATIO[0])
-        self.smallFont = pygame.font.Font('OverPass.ttf', 30 * RATIO[0])
-        self.tinyFont = pygame.font.Font('OverPass.ttf', 21 * RATIO[0])
+        self.bigFont = pygame.font.Font('OverPass.ttf', int(60 * RATIO[0]))
+        self.smallFont = pygame.font.Font('OverPass.ttf', int(30 * RATIO[0]))
+        self.tinyFont = pygame.font.Font('OverPass.ttf', int(21 * RATIO[0]))
         self.BACKGROUND_PIC = pygame.image.load("visuals/background.png")
         self.W_W = _W_W
         self.W_H = _W_H
