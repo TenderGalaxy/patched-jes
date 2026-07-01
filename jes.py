@@ -5,8 +5,9 @@ c_input = input("How many creatures do you want?\n100: Lightweight\n250: Standar
 if c_input == "":
     c_input = "250"
 sc_input = input("What are the dimensions of the screen? Answer in form XxY (e.g. 1920x1078).\n1920x1078 is the default if you do not answer (These are the stablest dimensions).")
-
-screen = [1920, 1078]
+if sc_input == "":
+    sc_input = "1920x1078"
+screen = [int(i) for i in sc_input.split('x')]
 
 # Simulation
 # population size is 250 here, because that runs faster. You can increase it to 500 to replicate what was in my video, but do that at your own risk!
