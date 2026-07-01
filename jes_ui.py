@@ -11,13 +11,13 @@ import random
 
 class UI:
     def __init__(self, _W_W, _W_H, _MOVIE_SINGLE_DIM, _GRAPH_COOR, _SAC_COOR, _GENEALOGY_COOR,
-    _COLUMN_MARGIN, _MOSAIC_DIM, _MENU_TEXT_UP, _CM_MARGIN1, _CM_MARGIN2):
+    _COLUMN_MARGIN, _MOSAIC_DIM, _MENU_TEXT_UP, _CM_MARGIN1, _CM_MARGIN2, RATIO):
         self.sliderList = []
         self.buttonList = []
         pygame.font.init()
-        self.bigFont = pygame.font.Font('OverPass.ttf', 60)
-        self.smallFont = pygame.font.Font('OverPass.ttf', 30)
-        self.tinyFont = pygame.font.Font('OverPass.ttf', 21)
+        self.bigFont = pygame.font.Font('OverPass.ttf', 60 * RATIO[0])
+        self.smallFont = pygame.font.Font('OverPass.ttf', 30 * RATIO[0])
+        self.tinyFont = pygame.font.Font('OverPass.ttf', 21 * RATIO[0])
         self.BACKGROUND_PIC = pygame.image.load("visuals/background.png")
         self.W_W = _W_W
         self.W_H = _W_H
@@ -57,7 +57,7 @@ class UI:
         self.screen = pygame.display.set_mode((self.W_W,self.W_H))
         self.mosaicScreen = pygame.Surface((self.MS_WC,self.MS_H), pygame.SRCALPHA, 32)
         self.infoBarScreen = pygame.Surface((self.INFO_W,self.MS_H), pygame.SRCALPHA, 32)
-        self.previewLocations = [[570,105,250,250],[570,365,250,250],[570,625,250,250]]
+        self.previewLocations = [[570*RATIO[0],105*RATIO[1],250*RATIO[0],250*RATIO[1]],[570*RATIO[0],365*RATIO[1],250*RATIO[0],250*RATIO[1]],[570*RATIO[0],625*RATIO[1],250*RATIO[0],250*RATIO[1]]]
         self.salt = str(random.uniform(0,1))
         self.sc_colors = {} # special-case colors: species colored by the user, not RNG
         
@@ -77,7 +77,7 @@ class UI:
         self.SAMPLE_FREEZE_TIME = 90
         self.showXs = True
         self.species_storage = None
-        self.storage_coor = (660,52)
+        self.storage_coor = (660*RATIO[0],52*RATIO[1])
         self.running = True
         
     def addButtonsAndSliders(self):
